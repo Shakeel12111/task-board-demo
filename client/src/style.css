@@ -1,0 +1,143 @@
+:root {
+  --ink: #1d2433;
+  --muted: #5b6475;
+  --paper: #f7f8fa;
+  --card: #ffffff;
+  --line: #d9dde5;
+  --accent: #0b6e69;
+  --accent-ink: #ffffff;
+  --danger: #a3261f;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.board {
+  max-width: 34rem;
+  margin: 0 auto;
+  padding: 2.5rem 1rem 4rem;
+}
+
+.board-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.status {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.status.live {
+  color: var(--accent);
+}
+
+.add {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+}
+
+.add label {
+  grid-column: 1 / -1;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+input[type='text'] {
+  padding: 0.65rem 0.75rem;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
+}
+
+button {
+  padding: 0.65rem 1rem;
+  font: inherit;
+  cursor: pointer;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 3px solid #f0b429;
+  outline-offset: 2px;
+}
+
+.error {
+  margin: 0.75rem 0 0;
+  color: var(--danger);
+}
+
+.empty {
+  margin: 2rem 0;
+  color: var(--muted);
+}
+
+.tasks {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.tasks li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+}
+
+.tasks li + li {
+  border-top: 1px solid var(--line);
+}
+
+.tasks label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.tasks li.done span {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.remove {
+  padding: 0.35rem 0.7rem;
+  background: transparent;
+  color: var(--danger);
+  border: 1px solid var(--line);
+}
+
+.count {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
